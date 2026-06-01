@@ -1,0 +1,7 @@
+# Copy to `.dev.vars` for local `wrangler dev`. Never commit `.dev.vars`.
+# In production set these with: wrangler secret put NAME
+APP_SHARED_TOKEN="dev-token-change-me"
+OPENROUTER_API_KEY=""
+ANTHROPIC_ADMIN_KEY=""
+OPENAI_ADMIN_KEY=""
+GOOGLE_API_KEY=""

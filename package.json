@@ -1,0 +1,19 @@
+{
+  "name": "llm-limits-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cross-device PWA for monitoring LLM usage limits (Claude, ChatGPT, Gemini, OpenRouter, and more).",
+  "scripts": {
+    "dev:web": "pnpm --filter @llm-limits/web dev",
+    "dev:worker": "pnpm --filter @llm-limits/worker dev",
+    "build": "pnpm --filter @llm-limits/shared build && pnpm --filter @llm-limits/web build",
+    "build:web": "pnpm --filter @llm-limits/web build",
+    "deploy:worker": "pnpm --filter @llm-limits/worker deploy",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r --if-present lint"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,28 @@
+name = "llm-limits-monitor"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Origin allowed to call this Worker (your GitHub Pages site). Override per-env below.
+[vars]
+ALLOWED_ORIGIN = "http://localhost:5173"
+
+# History snapshots are written here by the Cron Trigger and read by GET /api/history.
+# Create with: wrangler kv namespace create HISTORY  (then paste the id below)
+# [[kv_namespaces]]
+# binding = "HISTORY"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Periodic snapshotting so history accrues even when the app is closed.
+[triggers]
+crons = ["*/30 * * * *"]
+
+# --- Secrets (set via `wrangler secret put NAME`, never commit them) ---
+#   APP_SHARED_TOKEN     gates access to the proxy (single-tenant auth)
+#   OPENROUTER_API_KEY   OpenRouter key
+#   ANTHROPIC_ADMIN_KEY  Anthropic Admin API key (org usage/cost), optional
+#   OPENAI_ADMIN_KEY     OpenAI admin key (usage/costs), optional
+#   GOOGLE_API_KEY       Google API key, optional
+
+[env.production]
+vars = { ALLOWED_ORIGIN = "https://fabiantorrestech.github.io" }
