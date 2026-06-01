@@ -1,5 +1,7 @@
 # Copy to `.dev.vars` for local `wrangler dev`. Never commit `.dev.vars`.
-# In production set these with: wrangler secret put NAME
+# In production set these with: wrangler secret put NAME (or the Cloudflare dashboard)
+# For local dev, point CORS at the Vite dev server:
+ALLOWED_ORIGIN="http://localhost:5173"
 APP_SHARED_TOKEN="dev-token-change-me"
 OPENROUTER_API_KEY=""
 ANTHROPIC_ADMIN_KEY=""

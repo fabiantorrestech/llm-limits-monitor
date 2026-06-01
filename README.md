@@ -34,7 +34,9 @@ token to match `APP_SHARED_TOKEN`.
 
 ## Deploy
 
-- **Worker:** `wrangler secret put …` then `pnpm deploy:worker`.
-- **PWA:** push to the default branch; the GitHub Actions workflow publishes to Pages.
+- **Worker:** `wrangler secret put …` then `pnpm deploy:worker` — or deploy from a phone
+  with no terminal via [docs/CLOUDFLARE_PHONE_DEPLOY.md](./docs/CLOUDFLARE_PHONE_DEPLOY.md).
+- **PWA:** push to the deploy branch; the GitHub Actions workflow publishes to Pages at
+  `https://fabiantorrestech.github.io/llm-limits-monitor/`.
 
 See [OFFICIAL_DOCUMENTATION.md §8](./OFFICIAL_DOCUMENTATION.md#8-setup--deploy-runbook).

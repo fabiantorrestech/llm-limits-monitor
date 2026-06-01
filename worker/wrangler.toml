@@ -3,9 +3,11 @@ main = "src/index.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
-# Origin allowed to call this Worker (your GitHub Pages site). Override per-env below.
+# Origin allowed to call this Worker. Defaults to your GitHub Pages site so the
+# deployed Worker works out of the box. For local dev, override in .dev.vars with
+# ALLOWED_ORIGIN="http://localhost:5173".
 [vars]
-ALLOWED_ORIGIN = "http://localhost:5173"
+ALLOWED_ORIGIN = "https://fabiantorrestech.github.io"
 
 # History snapshots are written here by the Cron Trigger and read by GET /api/history.
 # Create with: wrangler kv namespace create HISTORY  (then paste the id below)
@@ -23,6 +25,3 @@ crons = ["*/30 * * * *"]
 #   ANTHROPIC_ADMIN_KEY  Anthropic Admin API key (org usage/cost), optional
 #   OPENAI_ADMIN_KEY     OpenAI admin key (usage/costs), optional
 #   GOOGLE_API_KEY       Google API key, optional
-
-[env.production]
-vars = { ALLOWED_ORIGIN = "https://fabiantorrestech.github.io" }
